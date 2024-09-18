@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="w-screen">
         <div className="wrapper">
           <div className="content">
-            <section className="h-screen flex items-center justify-center bg-blue-200 h-[100vh]">
+            <section className="h-screen flex items-center justify-center bg-blue-200 h-[100vh] ">
               <h1 className="text-4xl font-bold">Section 2</h1>
             </section>
             <section className="h-screen flex items-center justify-center bg-green-200 h-[100vh]">
