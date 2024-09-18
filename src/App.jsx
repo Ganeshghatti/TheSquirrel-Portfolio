@@ -1,34 +1,26 @@
-import React, { Suspense, useState, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, SpotLight } from "@react-three/drei";
-import { Squirrel } from "./components/Squirrel";
 import "./App.css";
+import Home from "./pages/home/Home";
+import { OrbitControls, SpotLight, ScrollControls } from "@react-three/drei";
+import { Squirrel } from "./components/Squirrel";
 
 function App() {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <Canvas camera={{ position: [5, 5, 5], fov: 50 }}>
-        <Suspense fallback={null}>
-          <Environment preset="forest" background />
-          <SpotLight
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={1}
-            castShadow
-          />
-          <Squirrel position={[0, -2, 0]} />
-          <OrbitControls />
-        </Suspense>
-      </Canvas>
-    </div>
+    <Canvas camera={{ position: [5, 5, 5], fov: 50 }}>
+      <ambientLight intensity={3} />
+      <SpotLight
+        position={[10, 10, 10]}
+        angle={0.15}
+        penumbra={1}
+        intensity={1}
+        castShadow
+      />
+      <OrbitControls enableZoom={false} />
+      <ScrollControls pages={4} damping={0.25}>
+        <Home />
+        <Squirrel />
+      </ScrollControls>
+    </Canvas>
   );
 }
 

@@ -7,18 +7,18 @@ Source: https://sketchfab.com/3d-models/animated-squirrel-lowpoly-art-style-712d
 Title: Animated Squirrel Lowpoly Art Style
 */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGraph } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
 
 export function Squirrel(props) {
-  const group = React.useRef();
+  const group = useRef();
   const { scene, animations } = useGLTF("/assets/models/scene.gltf");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
   const { actions, names } = useAnimations(animations, group);
-
+  
   useEffect(() => {
     actions[names[1]].reset().fadeIn(0.5).play();
     return () => {
@@ -27,13 +27,17 @@ export function Squirrel(props) {
   }, []);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+    >
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group
             name="Squirrelfbx"
             rotation={[Math.PI / 2, 0, 0]}
-            scale={0.075}
+            scale={0.05}
           >
             <group name="Object_2">
               <group name="RootNode">

@@ -2,24 +2,11 @@
   width: 100vw;
   height: 100vh;
 }
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+html, body {
+  overflow: hidden;
+  margin: 0;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: #fcf4e7;
-  font-family: "Poppins", sans-serif;
-}
-button{
-  background: red;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.border{
+  border: 2px solid red;
 }
