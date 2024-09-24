@@ -29,7 +29,7 @@ function App() {
             castShadow
           />
           <Squirrel />
-          <OrbitControls enableZoom={false} enablePan={false} />
+          <OrbitControls enableZoom={false} enablePan={false} enableRotate={false}/>
         </Canvas>
       </div>
       <Home />
