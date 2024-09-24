@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
 import { useGraph } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
@@ -15,12 +15,38 @@ export function Squirrel(props) {
   const { nodes, materials } = useGraph(clone);
   const { actions, names } = useAnimations(animations, group);
 
+  const [isScrolling, setIsScrolling] = useState(false);
+  let scrollTimeout = useRef(null);
+
   useEffect(() => {
-    actions[names[1]].reset().fadeIn(0.5).play();
-    return () => {
-      actions[names[1]].fadeOut(0.5);
+    const handleScroll = () => {
+      setIsScrolling(true);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+      scrollTimeout.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 200);
     };
-  }, [actions, names]);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isScrolling) {
+      actions[names[0]].reset().fadeIn(0.5).play();
+      actions[names[1]].fadeOut(0.5);
+    } else {
+      actions[names[1]].reset().fadeIn(0.5).play();
+      actions[names[0]].fadeOut(0.5);
+    }
+  }, [isScrolling, actions, names]);
 
   let camera = useThree((state) => state.camera);
   let threejsscene = useThree((state) => state.scene);
@@ -50,22 +76,22 @@ export function Squirrel(props) {
             endTrigger: "#sec4",
             end: "top top",
             scrub: 1,
-            duration:1,
+            duration: 1,
             markers: true,
           },
         });
 
         // Define labels
         t1.add("start")
-          .add("key1", 1)
-          .add("key2", 2)
-          .add("key3", 4);
+          .add("key1", 1.5)
+          .add("key2", 3)
+          .add("key3", 4.5);
 
-        // Animate to labels
-        t1.fromTo(camera.position, { x: 0 }, { x: -3, duration: 2 }, "start")
-          .to(camera.position, { x: 3, duration: 3 }, "key1")
-          .to(camera.position, { x: -3, duration: 3 }, "key2")
-          .to(camera.position, { x: 3, duration: 3 }, "key3");
+        // Animate to labels with easing
+        t1.fromTo(camera.position, { x: 0 }, { x: -3, duration: 2.5, ease: "power1.inOut" }, "start")
+          .to(camera.position, { x: 3, duration: 2.5, ease: "power1.inOut" }, "key1")
+          .to(camera.position, { x: -3, duration: 2.5, ease: "power1.inOut" }, "key2")
+          .to(camera.position, { x: 3, duration: 2.5, ease: "power1.inOut" }, "key3");
 
         if (isMobile) {
           camera.fov = 20;
