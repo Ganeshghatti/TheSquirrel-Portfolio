@@ -12,7 +12,7 @@ function App() {
         className="w-screen h-screen fixed top-0 left-0 z-10 border"
         id="squirrel-model"
       >
-        <Canvas camera={{ position: [5, 5, 5], fov: 50 }} shadows>
+        <Canvas camera={{ fov: 14 }}>
           <ambientLight intensity={4} />
           <SpotLight
             position={[10, 10, 10]}
