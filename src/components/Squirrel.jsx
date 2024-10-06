@@ -88,7 +88,7 @@ export function Squirrel(props) {
           .add("key3", 4.5);
 
         // Animate to labels with easing
-        t1.fromTo(camera.position, { x: 0 }, { x: -3, duration: 2.5, ease: "power1.inOut" }, "start")
+        t1.fromTo(camera.position, { x: 0, y:0 }, { x: -3, duration: 2.5, ease: "power1.inOut" }, "start")
           .to(camera.position, { x: 3, duration: 2.5, ease: "power1.inOut" }, "key1")
           .to(camera.position, { x: -3, duration: 2.5, ease: "power1.inOut" }, "key2")
           .to(camera.position, { x: 3, duration: 2.5, ease: "power1.inOut" }, "key3");
