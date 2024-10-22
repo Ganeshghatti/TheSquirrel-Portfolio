@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className=" flex flex-col gap-14 bg-white rounded-[50px] p-16 w-[90%]">
         <Title />
         <Description />
-        <Button />
+        {/* <Button /> */}
       </div>
     </section>
   );
@@ -21,7 +21,7 @@ export default function AboutSection() {
 
 function Title() {
   return (
-    <h1 className="text-9xl leading-10  tracking-widest text-black font-bold">
+    <h1 className=" text-6xl sm:text-7xl md:text-8xl  lg:text-9xl leading-10  tracking-widest text-black font-bold">
       About
     </h1>
   );
@@ -37,7 +37,7 @@ function Description() {
 
 function Button() {
   return (
-    <button className=" bg-[#E8E8E8] flex flex-row items-center text-black w-full max-w-[700px]  border border-[#C8C8C8] rounded-full   px-5 py-2 gap-5">
+    <button className=" text-nowrap bg-[#E8E8E8] flex flex-row items-center text-black w-full max-w-[700px]  border border-[#C8C8C8] rounded-full   px-5 py-2 gap-5">
       <span className=" size-[60px] bg-black rounded-full"></span>
       <span className="font-medium mb-2 text-7xl">CONTACT US!</span>
     </button>

@@ -18,7 +18,7 @@ const items = [
 
 const ImageGallery = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
+    <div className=" w-full flex items-center justify-center  bg-black  overflow-hidden">
     <div className="items">
       {items.map((url, index) => (
         <div
@@ -30,20 +30,22 @@ const ImageGallery = () => {
       ))}
     </div>
   </div>
-    // <div className="flex items-center justify-center h-screen bg-black">
-    //   <div className="flex gap-1 perspective-[calc((1vw+1vh)*35)]">
-    //   {items.map((url, index) => (
-    //       <div
-    //         key={index}
-    //         className="item"
-    //         tabIndex="0"
-    //         style={{ backgroundImage: `url(${url})` }}
-    //       ></div>
-    //     ))}
-    //   </div>
-    // </div>
+    
   );
 };
+
+function Title() {
+  return (
+    <div className=" flex flex-col px-16 w-[90%]">
+      <div className=" self-start py-20 w-1/2 flex flex-col justify-center">
+      <div className="flex ml-auto md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
+          <span>OUR</span>
+          <span>CASES</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -51,7 +53,8 @@ const ImageGallery = () => {
 
 export default function CasesSection() {
   return (
-    <section id="cases" className="bg-pink-500 h-screen  w-full">
+    <section id="cases" className="  py-[100px]  w-full flex flex-col items-center justify-center">
+    <Title />
     <ImageGallery />
     </section>
   )

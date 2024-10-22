@@ -13,7 +13,7 @@ export default function ServiceSection() {
 function Title() {
   return (
       <div className=" py-20 mr-1 flex flex-col justify-center">
-        <div className="flex ml-auto pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
+        <div className="flex ml-auto md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
           <span>OUR</span>
           <span>SERVICES</span>
         </div>
@@ -60,16 +60,16 @@ function Cards() {
 function Card({ key, id, title }) {
   
   return (
-    <div key={key} className="sticky top-28 h-[345px] w-full bg-[var(--primary-color)] flex flex-row items-center justify-center border border-black">
+    <div key={key} className="sticky top-28 h-[245px] sm:h-[275px] lg:h-[345px] w-full bg-[var(--primary-color)] flex flex-row items-center justify-center border border-black">
       <div className="flex flex-row items-center gap-10">
-        <div className="relative flex items-center justify-center h-[124px] w-[124px]">
+        <div className="relative flex items-center justify-center h-[80px] w-[80px] lg:h-[124px] lg:w-[124px]">
         <img src={Nut} alt="" className=" absolute h-full w-full" />
-          <span className="absolute text-7xl flex items-center justify-center font-bold h-full w-full">
+          <span className="absolute text-4xl sm:text-6xl md:text-7xl flex items-center justify-center font-bold h-full w-full">
             {id}
           </span>
           
         </div>
-        <h1 className="text-8xl font-semibold uppercase">{title}</h1>
+        <h1 className=" text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold uppercase">{title}</h1>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Nut from "../../assets/nut.svg";
 
 import { HOME_DESCRIPTION, HOME_EXPERIANCE, HOME_TITLE } from "../../db/static";
 import React from "react";
+
 export default function HomeSection() {
   return (
     <section
@@ -23,21 +24,21 @@ export default function HomeSection() {
 
 function Blob() {
   return (
-    <div className=" absolute overflow-hidden h-screen w-full border border-white">
+    <div className=" absolute overflow-hidden h-screen w-full">
       <div className=" relative h-full w-full">
         <img
           src={blob}
-          className="absolute left-[29%] top-[13%]   blur-[200px] opacity-70"
+          className=" absolute left-0 md:left-[29%] top-[13%]    blur-[200px] opacity-70"
           alt=""
         />
         <img
           src={blob}
-          className="absolute left-[20%] top-[29%] h-[376px] w-[376px]  blur-[200px] opacity-90  "
+          className=" absolute left-[20%] top-[29%] h-[200px] w-[200px] md:h-[376px] md:w-[376px]  blur-[200px] opacity-90  "
           alt=""
         />
         <img
           src={blob}
-          className="absolute left-[80%] top-[20%] h-[376px] w-[376px]   shadow-2xl blur-[200px]  "
+          className=" absolute left-0 md:left-[80%] top-[20%] h-[200px] w-[200px] md:h-[376px] md:w-[376px]  shadow-2xl blur-[200px]  "
           alt=""
         />
       </div>
@@ -70,10 +71,10 @@ function Expreance() {
         return (
           <div
             key={item.id}
-            className="  group md:hover:w-[40%] transition-all duration-500 ease-in-out flex lg:flex-row md:flex-col flex-row items-center md:w-1/3 w-[80%] bg-[var(--primary-color)] h-[270px] md:h-[400px] lg:h-[270px] px-10 py-8 gap-5"
+            className="  group md:hover:w-[40%]  transition-all duration-500 ease-in-out flex lg:flex-row md:flex-col flex-row items-center md:w-1/3  sm:w-[80%] w-[90%] bg-[var(--primary-color)] h-[270px] md:h-[400px] lg:h-[270px] px-10 py-8 gap-5"
           >
             <div className="flex flex-col ">
-              <span className="font-days text-8xl mt-6 group-hover:mt-0 font-extrabold transition-all duration-500 ease-in-out group-hover:text-9xl">
+              <span className="font-days text-7xl sm:text-8xl  mt-6 group-hover:mt-0 font-extrabold transition-all duration-500 ease-in-out group-hover:text-9xl">
                 {item.data}
               </span>
               <div className="h-[1px] mt-3 w-7 bg-white transition-all duration-500 ease-in-out group-hover:w-9"></div>
@@ -85,7 +86,7 @@ function Expreance() {
               <img
                 src={Nut}
                 alt=""
-                className="transition-all min-h-[123px] min-w-[123px] duration-500 ease-in-out group-hover:scale-125"
+                className="transition-all h-[100px] w-[100px] sm:min-h-[123px] sm:min-w-[123px] duration-500 ease-in-out group-hover:scale-125"
               />
             </div>
           </div>
@@ -151,7 +152,7 @@ const CardSlider = ({ cards }) => {
       {cards.map((card, index) => (
         <motion.div
           key={index}
-          className="card absolute  left-1/2 right-1/2  w-[70%] h-[530px] bg-white rounded-[50px] shadow-lg p-16"
+          className="card absolute  left-1/2 right-1/2  w-[70%] h-fit lg:h-[530px] bg-white rounded-[50px] shadow-lg p-16"
           variants={cardVariants}
           initial="hidden"
           animate={getCardStyle(index)}
@@ -200,7 +201,7 @@ const CardSlider = ({ cards }) => {
               </motion.div>
             </div>
 
-            <div className="flex flex-row justify-between mt-auto">
+            <div className="flex flex-row justify-between mt-4 lg:mt-auto">
               <h6 className="text-2xl font-normal text-black capitalize ">
                 PRODUCT NAME
               </h6>

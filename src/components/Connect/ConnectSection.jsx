@@ -4,7 +4,7 @@ export default function ConnectSection() {
   return (
     <section
       id="contact"
-      className=" py-[100px]  w-full flex flex-col items-center justify-center"
+      className=" py-[100px]  w-full flex flex-col items-center justify-center "
     >
       <Title />
       <Box />
@@ -17,9 +17,9 @@ function Title() {
   return (
     <div className=" flex flex-col px-16 w-[90%]">
       <div className=" self-start py-20 w-1/2 flex flex-col justify-center">
-        <div className="flex flex-col text-9xl font-black">
-          <span>OUR</span>
-          <span>SERVICES</span>
+      <div className="flex ml-auto md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
+          <span>LET'S</span>
+          <span>CONNECT</span>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ function Title() {
 function Box() {
   return (
     <form className=" flex flex-col gap-14 bg-white rounded-[50px] p-16 w-[90%]">
-      <h1 className=" w-full max-w-[700px] text-6xl  font-black tracking-wide text-black">
+      <h1 className=" w-full max-w-[700px] text-5xl lg:text-6xl  font-black tracking-wide text-black">
         Your Next Big Leap Starts Here.
       </h1>
       <div className=" w-full max-w-[700px] text-black">
@@ -51,13 +51,16 @@ function Box() {
           />
         </div>
       </div>
-      <button
+      {/* <button
         type="submit"
-        className=" relative bg-[#E8E8E8] flex flex-row items-center text-black  w-full max-w-[700px]  border border-[#C8C8C8] rounded-full   px-5 py-2 gap-5 group "
+        className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black  w-full max-w-[700px]  border border-[#C8C8C8] rounded-full   px-[100px] py-5 md:py-2 gap-5 group "
       >
-        <img src={Arrow} className=' absolute left-5 group-hover:left-[calc(89%)] transition-all duration-500 ease-in-out group-hover:rotate-180'/>
-        <span className="font-medium mb-2 ml-20 text-7xl">CONTACT US!</span>
-      </button>
+        
+        <img src={Arrow} className=' absolute left-5 group-hover:left-[calc(100%-75px)] transition-all duration-500 ease-in-out group-hover:rotate-[400deg]'/>
+        <span className="w-fit font-medium mb-2 text-5xl md:text-7xl">CONTACT US!</span>
+      </button> */}
+
+      
     </form>
   );
 }
@@ -65,19 +68,19 @@ function Box() {
 function Footer() {
   return (
     <div className=" mt-[450px] w-full  flex flex-row justify-center">
-      <div className="border border-red-400 flex flex-col flex-1 h-full mt-auto w-[50%]">
+      <div className="flex flex-col flex-1 h-full mt-auto w-[50%]">
         <h6 className=" text-3xl font-light">
           The Squirrel, Copyright 2024-2025
         </h6>
       </div>
 
-      <div className="border border-red-700 flex flex-col w-[50%] ml-auto ">
-        <h4 className="font-bold text-7xl mb-10">The Squirrel</h4>
+      <div className=" flex flex-col w-[50%] ml-auto ">
+        <h4 className="font-bold text-5xl sm:text-6xl lg:text-7xl mb-10">The Squirrel</h4>
         <p className="font-normal text-3xl mb-16">
           Efficient, Intelligent, and Innovative. We're here to revolutionize
           the way you think about service. Experience the future with us today!
         </p>
-        <div className=" w-full h-[180px] flex flex-row justify-between border border-green-600 text-3xl font-normal">
+        <div className=" w-full h-[180px] flex flex-row justify-between  text-3xl font-normal">
           <div className="flex flex-col gap-6">
             <Link href="about" title="About" />
             <Link href="service" title="Service" />
