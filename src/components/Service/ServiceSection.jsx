@@ -1,4 +1,5 @@
 import React from "react";
+import Nut from '../../assets/nut.svg';
 
 export default function ServiceSection() {
   return (
@@ -21,21 +22,54 @@ function Title() {
 }
 
 function Cards() {
+  const Data = [
+    {
+      id: '01',
+      title: "Web Development",
+    },
+    {
+      id: '02',
+      title: "App Development",
+    },
+    {
+      id: '03',
+      title: "AI Chatbot",
+    },
+    {
+      id: '04',
+      title: "PERSONALISED AI",
+    },
+    {
+      id: '05',
+      title: "Business Automation",
+    }
+  ]
   return (
     <div className=" relative w-full my-[200px] flex flex-col">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+    {
+      Data.map((item) => {
+        return (
+          <Card key={item.id} id={item.id} title={item.title} />
+        )
+      })
+    }
     </div>
   );
 }
 
-function Card() {
+function Card({ key, id, title }) {
+  
   return (
-    <div className="sticky top-0 h-[345px] w-full bg-[var(--primary-color)] flex flex-col items-center justify-center border border-black">
-      <div>
-        <h1 className="text-8xl font-semibold">WEB DEVELOPMENT</h1>
+    <div key={key} className="sticky top-28 h-[345px] w-full bg-[var(--primary-color)] flex flex-row items-center justify-center border border-black">
+      <div className="flex flex-row items-center gap-10">
+        <div className="relative flex items-center justify-center h-[124px] w-[124px]">
+        <img src={Nut} alt="" className=" absolute h-full w-full" />
+          <span className="absolute text-7xl flex items-center justify-center font-bold h-full w-full">
+            {id}
+          </span>
+          
+        </div>
+        <h1 className="text-8xl font-semibold uppercase">{title}</h1>
       </div>
     </div>
   );
