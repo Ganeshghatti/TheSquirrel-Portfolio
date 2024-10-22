@@ -1,20 +1,21 @@
-import gsap from "gsap";
+// import gsap from "gsap";
+import AboutSection from "../../../components/About/AboutSection";
+import HomeSection from "../../../components/Home/HomeSection";
+import Navbar from "../../../components/Navbar";
+import CasesSection from "../../../components/Cases/CasesSection";
+import ConnectSection from "../../../components/Connect/ConnectSection";
+import ServiceSection from "../../../components/Service/ServiceSection";
+import React from "react";
 
 export default function Hero() {
   return (
-    <div className="w-screen">
-      <section className="h-screen flex items-center justify-center border" id="sec1">
-        <h1 className="text-4xl font-bold">Welcome to Squirrel World</h1>
-      </section>
-      <section className="h-screen flex items-center justify-center border" id="sec2">
-        <h1 className="text-4xl font-bold">Explore the Forest</h1>
-      </section>
-      <section className="h-screen flex items-center justify-center border" id="sec3">
-        <h1 className="text-4xl font-bold">Meet the Squirrel</h1>
-      </section>
-      <section className="h-screen flex items-center justify-center border" id="sec4">
-        <h1 className="text-4xl font-bold">Adventure Awaits</h1>
-      </section>
+    <div className="w-full">
+      <Navbar />
+      <HomeSection/>
+      <AboutSection/>
+      <ServiceSection/>
+      <CasesSection/>
+      <ConnectSection/>
     </div>
   );
 }
