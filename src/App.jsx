@@ -8,7 +8,7 @@ import { Squirrel } from "./components/Squirrel";
 function App() {
   return (
     <>
-      <div
+      {/* <div
         className="w-screen h-screen fixed top-0 left-0 z-10 border"
         id="squirrel-model"
       >
@@ -23,7 +23,7 @@ function App() {
           />
           <Squirrel />
         </Canvas>
-      </div>
+      </div> */}
       <Home />
     </>
   );
