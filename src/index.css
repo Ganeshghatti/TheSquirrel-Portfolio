@@ -1,5 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Days One";
+  src: url("./font/days-one/DaysOne-Regular.ttf");
+}
+
+@layer base {
+  :root {
+    font-family: "Darker Grotesque", sans-serif;
+
+    color: rgba(255, 255, 255, 0.87);
+
+    --primary-color: #ac5f12;
+
+    --navbar-bg-color: #252525;
+    --navbar-link-color: #ffffff;
+    --navbar-link-active-bg-color: #37545c;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .navbar_bg_shadow {
+    box-shadow: inset 4px 4px 4px 0px #4a6b74;
+  }
+  .blob {
+    /* Vector */
+    position: absolute;
+    left: 27.48%;
+    right: 29.32%;
+    top: 5.42%;
+    bottom: 26.86%;
+
+    /* background: linear-gradient(180deg, #30484f 0%, #1a282f 100%); */
+  }
+  .frame {
+    position: absolute;
+    left: 79.28%;
+    right: -3.42%;
+    top: 23.94%;
+    bottom: 47.94%;
+
+    background: linear-gradient(180deg, #30484f 0%, #1a282f 100%);
+  }
+}
+
+#root {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  /* text-align: center; */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+}

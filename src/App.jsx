@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { useRef, useState, useEffect } from "react";
-import "./App.css";
+// import "./App.css";
 import Home from "./pages/home/Home";
 import { OrbitControls, SpotLight } from "@react-three/drei";
 import { Squirrel } from "./components/Squirrel";
