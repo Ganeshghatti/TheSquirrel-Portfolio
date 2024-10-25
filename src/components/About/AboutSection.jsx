@@ -47,10 +47,10 @@ function Button() {
   return (
     <button
       onClick={handleClick}
-      className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-5  sm:px-[100px] py-2 sm:py-4 gap-5 group "
+      className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-5  sm:px-[100px] py-0  gap-5 group "
     >
 
-      <img src={Arrow} className='hidden sm:block absolute left-5 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
+      <img src={Arrow} className='hidden sm:block absolute left-3 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
       <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
     </button>
   );

@@ -1,14 +1,15 @@
 import { Canvas } from "@react-three/fiber";
-import { useRef, useState, useEffect } from "react";
+// import { useRef, useState, useEffect } from "react";
 // import "./App.css";
 import Home from "./pages/home/Home";
 import { OrbitControls, SpotLight } from "@react-three/drei";
 import { Squirrel } from "./components/Squirrel";
+import React from "react";
 
 function App() {
   return (
     <>
-      <div
+      {/* <div
         className="w-screen h-screen fixed top-0 left-0 z-10 border"
         id="squirrel-model"
       >
@@ -23,7 +24,7 @@ function App() {
           />
           <Squirrel />
         </Canvas>
-      </div>
+      </div> */}
       <Home />
     </>
   );

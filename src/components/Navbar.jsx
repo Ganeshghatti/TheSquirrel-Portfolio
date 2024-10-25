@@ -67,7 +67,7 @@ export default function Navbar() {
           <li key={id} className="h-full flex items-center">
             <a
               href={`#${id}`}
-              className={ `px-4 py-1 sm:py-3 text-lg sm:text-3xl leading-8 rounded-md transition-colors duration-300 relative z-10 h-full flex items-center text-white ${
+              className={ `px-4 py-1 sm:py-1 sm:mb-1 text-lg sm:text-3xl leading-8 rounded-md transition-colors duration-300 relative z-10 h-full flex items-center text-white ${
                 activeLink === id ? 'text-white' : 'text-gray-300 hover:text-white'
               }`}
               onClick={(e) => handleClick(e, id)}

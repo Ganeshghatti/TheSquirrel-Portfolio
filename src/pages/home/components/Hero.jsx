@@ -6,11 +6,13 @@ import CasesSection from "../../../components/Cases/CasesSection";
 import ConnectSection from "../../../components/Connect/ConnectSection";
 import ServiceSection from "../../../components/Service/ServiceSection";
 import React from "react";
+import Background from "../../../components/Background";
 
 export default function Hero() {
   return (
     <div className="w-full">
       <Navbar />
+      <Background />
       <HomeSection/>
       <AboutSection/>
       <ServiceSection/>

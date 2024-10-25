@@ -9,8 +9,10 @@
     perspective: calc(var(--index) * 35);
 }
 .item{
-    width: calc(var(--index) * 4);
-    height: calc(var(--index) * 12);
+    /* width: calc(var(--index) * 1); */
+    /* height: calc(var(--index) * 1); */
+    width: 200px;
+    height: 500px;
     background-color: #222;
     background-size: cover;
     background-position: center;
