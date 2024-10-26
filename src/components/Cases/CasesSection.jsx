@@ -18,7 +18,7 @@ const items = [
 
 const ImageGallery = () => {
   return (
-    <div className=" w-full flex items-center justify-center h-[920px]  bg-black  overflow-x-hidden">
+    <div className=" mt-28 w-full flex items-center justify-center h-fit  bg-black  overflow-x-hidden">
     <div className="items ">
       {items.map((url, index) => (
         <div
@@ -36,7 +36,7 @@ const ImageGallery = () => {
 
 function Title() {
   return (
-    <div className=" flex  w-[90%] px-16">
+    <div className=" flex  w-[90%] md:px-16">
       <div className="flex  md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
           <span>OUR</span>
           <span>CASES</span>

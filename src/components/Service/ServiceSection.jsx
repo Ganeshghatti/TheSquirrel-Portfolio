@@ -110,20 +110,24 @@ const Card = ({ id, title, description, features }) => {
 
   return (
     <div
-      className={`sticky cursor-pointer transition-all duration-500 ease-in-out top-0 h-[245px] sm:h-[275px] ${isHovered ? 'lg:h-[650px]' : 'lg:h-[345px]'} w-full bg-[var(--primary-color)] flex flex-row items-center justify-center border border-black`}
+      className={`sticky cursor-pointer transition-all duration-500 ease-in-out top-0  ${isHovered ? 'lg:h-[650px]' : 'lg:h-[345px]'}
+      ${isHovered ? 'sm:h-[650px]' : 'sm:h-[275px]'}
+      ${isHovered ? 'h-fit' : 'h-[245px]'}
+      
+       w-full bg-[var(--primary-color)] flex flex-row items-center justify-center border border-black`}
       onClick={() => setIsHovered(!isHovered)}
     >
-      <div className=" h-full w-full p-8 flex flex-col items-center">
+      <div className=" h-full w-full py-8 px-8 sm:p-8 flex flex-col items-center">
         {/* Top section with number and title */}
-        <div className="flex flex-row items-center gap-10 mt-[70px]">
+        <div className="flex flex-row items-center gap-3 sm:gap-10 mt-[50px] sm:mt-[60px] lg:mt-[70px]">
           <div className="relative flex items-center justify-center h-[80px] w-[80px] lg:h-[124px] lg:w-[124px]">
-            <img src={Nut} alt="" className=" absolute h-full w-full" />
-            <span className="absolute text-4xl sm:text-6xl md:text-7xl flex items-center justify-center font-bold h-full w-full">
+            <img src={Nut} alt="" className=" absolute h-[60px] w-[60px] sm:h-full sm:w-full" />
+            <span className="absolute text-4xl sm:text-5xl md:text-5xl lg:text-7xl flex items-center justify-center font-bold h-full w-full">
               {id}
             </span>
 
           </div>
-          <h1 className=" text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold uppercase"
+          <h1 className="text-nowrap text-3xl sm:text-5xl w-fit text-center md:text-6xl lg:text-8xl font-semibold uppercase"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             
@@ -132,20 +136,20 @@ const Card = ({ id, title, description, features }) => {
 
         {/* Animated content section */}
         <div
-          className={`transition-opacity pl-14 mt-[50px] mb-[70px] duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
+          className={`transition-opacity sm:pl-14 mt-[50px] mb-[70px] duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
             }`}
         >
-          <p className="text-4xl mb-6 max-w-2xl">
+          <p className="text-3xl sm:text-4xl mb-6 max-w-2xl font-medium">
             {description}
           </p>
 
-          <div className="grid grid-cols-2 gap-4 max-w-2xl">
+          <div className="grid sm:grid-cols-2 sm:gap-4 max-w-2xl text-nowrap ">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 text-3xl font-semibold"
+                className="flex items-center gap-2 text-2xl sm:text-3xl font-semibold"
               >
-                <span className=" text-xl sm:text-4xl md:text-5xl flex items-center justify-center font-bold text-slate-300 ">
+                <span className=" text-2xl sm:text-4xl md:text-5xl flex items-center justify-center font-bold text-slate-300 ">
                   {index + 1}.
                 </span>
                 {feature}
