@@ -15,7 +15,7 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    // updateIndicatorPosition(activeLink);
+    updateIndicatorPosition(activeLink);
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -57,7 +57,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-fit mx-auto top-10 left-0 right-0 z-50 flex items-center border border-white px-1 bg-[var(--navbar-bg-color)] text-[var(--navbar-link-color)] rounded-full" ref={navRef}>
+    <nav className="fixed w-fit mx-auto top-5 sm:top-10 left-0 right-0 z-50 flex items-center border border-white px-1 bg-[var(--navbar-bg-color)] text-[var(--navbar-link-color)] rounded-full" ref={navRef}>
       <ul className="relative flex items-center w-full justify-around h-full">
         <div
           className="absolute rounded-full bg-[var(--navbar-link-active-bg-color)] top-1 bottom-1 transition-all duration-300 ease-in-out navbar_bg_shadow"
