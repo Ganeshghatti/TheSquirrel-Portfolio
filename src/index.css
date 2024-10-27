@@ -11,14 +11,16 @@
   font-family: "Days One";
   src: url("./font/days-one/DaysOne-Regular.ttf");
 }
-
+*{
+  /* border: 1px solid yellow; */
+}
 @layer base {
   :root {
     font-family: "Darker Grotesque", sans-serif;
 
     color: rgba(255, 255, 255, 0.87);
 
-    --primary-color: #ac5f12;
+    --primary-color: #37545C;
 
     --navbar-bg-color: #252525;
     --navbar-link-color: #ffffff;
@@ -54,13 +56,16 @@
 
     background: linear-gradient(180deg, #30484f 0%, #1a282f 100%);
   }
+  .banner_bg {
+    background: linear-gradient(90deg, rgba(29, 26, 23, 0.3) -0.98%, rgba(10, 9, 8, 0) 45.86%, rgba(29, 26, 23, 0.3) 107.97%);
+  }
 }
 
 #root {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
   /* text-align: center; */
 }
 
@@ -72,3 +77,13 @@ body {
   min-height: 100vh;
   background-color: #000000;
 }
+
+/* Frame 1618873185 */
+
+/* Rectangle 34625795 */
+
+
+
+
+
+

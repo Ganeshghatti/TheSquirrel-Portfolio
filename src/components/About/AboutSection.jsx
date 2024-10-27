@@ -11,7 +11,7 @@ export default function AboutSection() {
       id="about"
       className=" py-[100px]  w-full flex flex-col items-center justify-center"
     >
-      <div className=" flex flex-col gap-14 bg-white rounded-[50px] p-16 w-[90%]">
+      <div className=" flex flex-col gap-10 md:gap-10 bg-[#f7f7f7] rounded-[50px] p-8 md:p-12 lg:p-16 w-[95%] md:w-[90%]">
         <Title />
         <Description />
         <Button />
@@ -31,7 +31,7 @@ function Title() {
 function Description() {
   return (
     <div className=" w-full max-w-[700px] text-black">
-      <p className="text-3xl tracking-widest">{DISCRIPTION}</p>
+      <p className="text-2xl md:text-3xl md:tracking-widest">{DISCRIPTION}</p>
     </div>
   );
 }
@@ -47,10 +47,10 @@ function Button() {
   return (
     <button
       onClick={handleClick}
-      className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-5  sm:px-[100px] py-2 sm:py-4 gap-5 group "
+      className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
     >
 
-      <img src={Arrow} className='hidden sm:block absolute left-5 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
+      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
       <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
     </button>
   );
