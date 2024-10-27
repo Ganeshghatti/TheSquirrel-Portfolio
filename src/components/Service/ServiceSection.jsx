@@ -1,5 +1,7 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import Nut from '../../assets/nut.svg';
+import useMousePosition from "../../hooks/useMousePosition";
 
 export default function ServiceSection() {
   return (
@@ -105,7 +107,7 @@ function Card1({ id, title, description, features }) {
     </div>
   );
 }
-const Card = ({ id, title, description, features }) => {
+const Card2 = ({ id, title, description, features }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -130,7 +132,7 @@ const Card = ({ id, title, description, features }) => {
           <h1 className="text-nowrap text-3xl sm:text-5xl w-fit text-center md:text-6xl lg:text-8xl font-semibold uppercase"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            
+
           >{title}</h1>
         </div>
 
@@ -158,6 +160,109 @@ const Card = ({ id, title, description, features }) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+const Card = ({ id, title, description, features }) => {
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDesOpen, setIsDesOpen] = useState(false);
+  const handleMouseMove = (e) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - bounds.left , // Subtract half the card width
+      y: e.clientY - bounds.top   // Subtract half the card height
+    });
+  };
+
+  return (
+    <div
+      className={`sticky cursor-pointer  transition-all duration-500 ease-in-out ${isDesOpen ? '' : 'top-0'}   h-fit  
+       w-full  flex flex-col items-center justify-center border border-black`}
+      onClick={() => setIsDesOpen(!isDesOpen)}
+    >
+      <div className=" relative  border  bg-[var(--primary-color)] h-[245px] sm:h-[275px] lg:h-[345px] w-full py-8 px-8 sm:p-8 flex flex-col items-center justify-center"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onMouseMove={handleMouseMove}
+      >
+        <div className="flex flex-row items-center gap-3 sm:gap-10 ">
+          <div className="relative flex items-center justify-center h-[80px] w-[80px] lg:h-[124px] lg:w-[124px]">
+            <img src={Nut} alt="" className=" absolute h-[60px] w-[60px] sm:h-full sm:w-full" />
+            <span className="absolute text-4xl sm:text-5xl md:text-5xl lg:text-7xl flex items-center justify-center font-bold h-full w-full">
+              {id}
+            </span>
+
+          </div>
+          <h1 className="text-nowrap text-3xl sm:text-5xl w-fit text-center md:text-6xl lg:text-8xl font-semibold uppercase"
+          // onMouseEnter={() => setIsHovered(true)}
+          // onMouseLeave={() => setIsHovered(false)}
+
+          >{title}</h1>
+        </div>
+
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                x: mousePosition.x - 600,
+                y: mousePosition.y - 200
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.8,
+                transition: { duration: 0.2 }
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 20
+              }}
+              className="absolute p-6 w-[200px] h-[200px] bg-white rounded-xl shadow-lg"
+              style={{
+                pointerEvents: "none",
+                zIndex: 20
+              }}
+            >
+              <div className="flex flex-col gap-2">
+                <h1 className="text-3xl text-black">{id}</h1>
+                <div className="w-full h-2 bg-gray-200 rounded" />
+                <div className="w-3/4 h-2 bg-gray-200 rounded" />
+                <div className="w-1/2 h-2 bg-gray-200 rounded" />
+                <div className="mt-4 w-12 h-12 bg-gray-200 rounded-full" />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+
+
+
+      </div>
+      <AnimatePresence initial={false}>
+        <motion.div
+          key="content"
+          initial={false}
+          animate={{
+            height: isDesOpen ? "auto" : 0,
+            opacity: isDesOpen ? 1 : 0.5
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut"
+          }}
+          className="w-full bg-blue-500 overflow-hidden"
+        >
+          <div className="p-4 h-[400px]">
+            <h1 className="text-9xl text-white">Description</h1>
+            {/* Add any dynamic content here */}
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
