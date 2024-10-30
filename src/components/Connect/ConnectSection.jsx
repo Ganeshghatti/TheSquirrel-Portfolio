@@ -143,7 +143,7 @@ function Footer() {
   return (
     <div className=" mt-[300px] w-[90%]  flex  flex-col-reverse sm:flex-row justify-center">
       <div className="flex flex-col flex-1 h-full mt-auto sm:w-[50%]">
-        <h6 className=" text-3xl font-light">
+        <h6 className=" text-xl sm:text-3xl font-light">
           The Squirrel, Copyright 2024-2025
         </h6>
       </div>
@@ -155,11 +155,11 @@ function Footer() {
           the way you think about service. Experience the future with us today!
         </p>
         <div className=" w-full h-[180px] flex flex-row justify-between  text-3xl font-normal">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-1 sm:gap-6">
             <Link href="about" title="About" />
             <Link href="service" title="Service" />
           </div>
-          <div className=" text-end flex flex-col gap-6">
+          <div className=" text-end flex flex-col gap-1 sm:gap-6">
             <Link href="home" title="Home" />
             <Link href="contact" title="Contact" />
             <Link href="cases" title="Cases" />
