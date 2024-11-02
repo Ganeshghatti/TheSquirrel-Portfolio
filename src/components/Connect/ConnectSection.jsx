@@ -5,7 +5,7 @@ export default function ConnectSection() {
   return (
     <section
       id="contact"
-      className=" pt-[100px]  w-full flex flex-col items-center justify-center overflow-hidden "
+      className=" pt-[50px]  w-full flex flex-col items-center justify-center overflow-hidden "
     >
       <Title />
       <Box />
@@ -18,7 +18,7 @@ export default function ConnectSection() {
 function Title() {
   return (
     <div className=" flex flex-col  w-[90%]">
-      <div className=" self-start py-20 w-1/2 flex flex-col justify-center">
+      <div className=" self-start pb-20 w-1/2 flex flex-col justify-center">
       <div className="flex ml-auto md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
           <span>LET'S</span>
           <span>CONNECT</span>
@@ -131,7 +131,7 @@ const Box = () => {
         <img 
           src={Arrow}
           alt="Arrow"
-          className=" h-[30px] md:h-fit absolute left-3 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]"
+          className=" h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]"
         />
         <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
       </button>
