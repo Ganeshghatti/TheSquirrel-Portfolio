@@ -30,7 +30,7 @@ export default function Navbar() {
           (!nextSection || nextSection.offsetTop > scrollPosition + 50);
       });
       if (currentSection) {
-        // setActiveLink(currentSection.id);
+        setActiveLink(currentSection.id);
         updateIndicatorPosition(currentSection.id);
       }
     };
@@ -112,7 +112,7 @@ export default function Navbar() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="fixed top-0 left-0 bottom-0 right-0 z-50 h-[105lvh] flex items-center bg-blue-50 p-1 pt-5"
+      className="fixed top-0 left-0 bottom-0 right-0 z-50 h-[102lvh] flex items-center bg-blue-50 p-1 pt-5"
       ref={navRef}
     >
       <div className="h-full w-full flex flex-col">

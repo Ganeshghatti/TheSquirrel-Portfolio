@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     gap: 0.4rem;
-    width: 100%;
+    width: 95%;
     perspective: calc(var(--index) * 35);
 }
 .item{
