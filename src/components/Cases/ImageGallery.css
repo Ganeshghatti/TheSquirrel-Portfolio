@@ -76,19 +76,19 @@
 /*Left*/
 .items .item:has( + :hover){
     filter: inherit;
-    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-20deg);
 }
 .items .item:has( + * + :hover){
     filter: inherit;
-    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-30deg);
 }
 .items .item:has( + * + * + :hover){
     filter: inherit;
-    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-20deg);
 }
 .items .item:has( + * + * + * + :hover){
     filter: inherit;
-    transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+    transform: translateZ(calc(var(--index) * .6)) rotateY(-2deg);
 }
 .items .item:active, .items .item:focus {
 	width: 28vw;

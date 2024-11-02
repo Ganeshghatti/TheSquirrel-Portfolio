@@ -50,7 +50,7 @@ function Button() {
       className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
     >
 
-      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
+      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
       <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
     </button>
   );

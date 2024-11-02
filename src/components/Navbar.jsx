@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { Menu } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import {AnimatePresence, motion} from 'framer-motion'
 
 
 export default function Navbar() {
@@ -16,14 +18,14 @@ export default function Navbar() {
 
   useEffect(() => {
     updateIndicatorPosition(activeLink);
-    
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const sections = links.map(link => document.getElementById(link.id));
       const currentSection = sections.find((section, index) => {
         const nextSection = sections[index + 1];
-        return section.offsetTop <= scrollPosition + 50 && 
-               (!nextSection || nextSection.offsetTop > scrollPosition + 50);
+        return section.offsetTop <= scrollPosition + 50 &&
+          (!nextSection || nextSection.offsetTop > scrollPosition + 50);
       });
       if (currentSection) {
         // setActiveLink(currentSection.id);
@@ -56,9 +58,51 @@ export default function Navbar() {
     }
   };
 
+
+
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    // Function to update time every second
+    const timeInterval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Scroll event handler
+    const handleScroll = () => {
+      // Adjust this value as needed - how much scroll before navbar changes
+      const scrollThreshold = 50;
+      if (window.scrollY > scrollThreshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      clearInterval(timeInterval);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Format time for Indian Standard Time (IST)
+  const formatTimeForIndia = () => {
+    return currentTime.toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+  };
+
   return (
-    <nav className="fixed w-fit mx-auto top-5 sm:top-10 left-0 right-0 z-50 flex items-center border border-white px-1 bg-[var(--navbar-bg-color)] text-[var(--navbar-link-color)] rounded-full" ref={navRef}>
-      <ul className="relative flex items-center w-full justify-around h-full">
+    <nav className="fixed sm:w-fit sm:mx-auto top-5 sm:top-10 left-0 right-0 z-50 flex items-center sm:border border-white sm:px-1 sm:bg-[var(--navbar-bg-color)] text-[var(--navbar-link-color)] rounded-full" ref={navRef}>
+      <ul className="hidden sm:flex relative items-center w-full justify-around h-full">
         <div
           className="absolute rounded-full bg-[var(--navbar-link-active-bg-color)] top-1 bottom-1 transition-all duration-300 ease-in-out navbar_bg_shadow"
           style={indicatorStyles}
@@ -78,6 +122,68 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      <div className='sm:hidden mt-2 h-10 w-full px-4 flex flex-row items-center justify-between'>
+      <div>logo</div>
+      
+      <motion.div 
+        className={`h-full w-fit flex flex-row items-center justify-center py-1 px-1 gap-3 rounded-full`}
+        initial={{ 
+          backgroundColor: 'transparent',
+          opacity: 0.7
+        }}
+        animate={{ 
+          backgroundColor: isScrolled 
+            ? 'var(--navbar-bg-color)' 
+            : 'transparent',
+          opacity: 1
+        }}
+        transition={{ 
+          duration: 0.3,
+          ease: "easeInOut"
+        }}
+      >
+        <AnimatePresence>
+          {isScrolled && (
+            <motion.div
+              key="time"
+              initial={{ 
+                opacity: 0, 
+                x: -10 
+              }}
+              animate={{ 
+                opacity: 1, 
+                x: 0 
+              }}
+              exit={{ 
+                opacity: 0, 
+                x: -10 
+              }}
+              transition={{ 
+                duration: 0.3,
+                ease: "easeOut"
+              }}
+              className='ml-2'
+            >
+              {formatTimeForIndia()}
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        <div className='h-full w-fit flex flex-row gap-1 items-center justify-center rounded-full border border-white p-1'>
+          <div className='ml-2 mb-1'>Menu</div>
+          <motion.div 
+            className='h-6 w-6 p-1 flex items-center justify-center overflow-hidden rounded-full border border-white'
+            whileTap={{ scale: 0.95 }}
+          >
+            <Menu />
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
     </nav>
   );
+
+
+  
 }

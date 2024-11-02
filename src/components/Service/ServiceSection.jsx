@@ -232,7 +232,7 @@ const Card = ({ id, title, description, features, isOpen,
                 stiffness: 200,
                 damping: 20
               }}
-              className="absolute p-6 w-[200px] h-[200px] bg-white rounded-xl shadow-lg"
+              className="absolute hidden sm:block p-6 w-[200px] h-[200px] bg-white rounded-xl shadow-lg"
               style={{
                 pointerEvents: "none",
                 zIndex: 20
@@ -268,7 +268,7 @@ const Card = ({ id, title, description, features, isOpen,
           className="w-full bg-teal-600 overflow-hidden"
         >
           <div className="flex flex-col my-10 items-center gap-14 justify-center px-8 sm:px-10 md:px-20 lg:px-52 h-fit">
-            <p className="text-4xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione animi nobis sequi corrupti praesentium laudantium. Mollitia error molestias eos beatae dolore praesentium consequatur quo quidem, dignissimos, neque adipisci voluptate nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo mollitia ea obcaecati quia porro eius, animi minima aut, autem soluta eaque. Ad, cupiditate vero repudiandae corporis neque saepe adipisci atque.</p>
+            <p className=" text-xl sm:text-3xl md:text-4xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione animi nobis sequi corrupti praesentium laudantium. Mollitia error molestias eos beatae dolore praesentium consequatur quo quidem, dignissimos, neque adipisci voluptate nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo mollitia ea obcaecati quia porro eius, animi minima aut, autem soluta eaque. Ad, cupiditate vero repudiandae corporis neque saepe adipisci atque.</p>
             <Button />
           </div>
         </motion.div>
@@ -291,7 +291,7 @@ function Button() {
       className=" self-start text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
     >
 
-      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
+      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
       <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
     </button>
   );

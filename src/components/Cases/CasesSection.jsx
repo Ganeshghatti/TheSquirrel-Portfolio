@@ -18,8 +18,8 @@ const items = [
 
 const ImageGallery = () => {
   return (
-    <div className=" mt-28 w-full flex items-center justify-center h-fit  bg-black  overflow-x-hidden">
-    <div className="items ">
+    <div className=" mt-28 w-full flex items-center justify-center h-fit  bg-black  ">
+    <div className="items h-full ">
       {items.map((url, index) => (
         <div
           key={index}
@@ -52,7 +52,7 @@ function Title() {
 
 export default function CasesSection() {
   return (
-    <section id="cases" className="   w-full flex flex-col items-center justify-center">
+    <section id="cases" className="   w-full flex flex-col items-center justify-center overflow">
     <Title />
     <ImageGallery />
     </section>
