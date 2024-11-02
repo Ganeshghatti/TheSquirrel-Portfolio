@@ -164,7 +164,7 @@ export default function Navbar() {
             onClick={(e) => {handleClick(e, id); setisMenuOpen(false)}}
             data-link={id}
             href={`#${id}`}
-            className={`${activeLink === id ? 'text-white' : 'text-gray-300 hover:text-white'
+            className={`${activeLink === id ? 'text-black' : 'text-gray-600 hover:text-white'
                   }`}
             >{label}</a>
           ))}
