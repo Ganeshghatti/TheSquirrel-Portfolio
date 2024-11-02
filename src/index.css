@@ -74,7 +74,7 @@ body {
   display: flex;
   min-width: 320px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #000000;
 }
 
