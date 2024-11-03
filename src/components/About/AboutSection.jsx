@@ -9,9 +9,9 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className=" py-[100px]  w-full flex flex-col items-center justify-center"
+      className=" py-[100px]  w-[100%] flex flex-col items-center justify-center"
     >
-      <div className=" flex flex-col gap-10 md:gap-10 bg-[#f7f7f7] rounded-[50px] p-8 md:p-12 lg:p-16 w-[95%] md:w-[90%]">
+      <div className=" flex flex-col gap-10 md:gap-10 bg-[#f7f7f7] rounded-[50px] p-8 md:p-12 lg:p-16 w-[95%] md:w-[95%]">
         <Title />
         <Description />
         <Button />

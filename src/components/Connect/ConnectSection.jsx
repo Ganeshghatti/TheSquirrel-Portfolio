@@ -17,9 +17,9 @@ export default function ConnectSection() {
 
 function Title() {
   return (
-    <div className=" flex flex-col  w-[90%]">
+    <div className=" flex flex-col  w-[95%]">
       <div className=" self-start pb-20 w-1/2 flex flex-col justify-center">
-      <div className="flex ml-auto md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
+      <div className="flex  md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
           <span>LET'S</span>
           <span>CONNECT</span>
         </div>
@@ -51,7 +51,7 @@ const Box = () => {
 
   return (
     <form 
-      className="flex flex-col gap-10 md:gap-14 bg-white rounded-[50px] p-8 md:p-12 lg:p-16 md:w-[90%]"
+      className="flex flex-col gap-10 md:gap-14 bg-white rounded-[50px] p-8 md:p-12 lg:p-16 w-[95%] md:w-[95%]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h1 className="w-full max-w-[700px] text-3xl md:text-5xl lg:text-6xl font-black tracking-wide text-black">
@@ -141,7 +141,7 @@ const Box = () => {
 
 function Footer() {
   return (
-    <div className=" mt-[300px] w-[90%]  flex  flex-col-reverse sm:flex-row justify-center">
+    <div className=" mt-[300px] w-[95%]  flex  flex-col-reverse sm:flex-row justify-center">
       <div className="flex flex-col flex-1 h-full mt-auto sm:w-[50%]">
         <h6 className=" text-xl sm:text-3xl font-light">
           The Squirrel, Copyright 2024-2025
@@ -185,7 +185,7 @@ function Link({ href, title }) {
 
 function Banner() {
   return (
-    <div className="mt-5 w-[90%] h-[150px] md:h-[300px] flex flex-col overflow-hidden border-b border-t border-[#F0F0F0]">
+    <div className="mt-5 w-[95%] h-[150px] md:h-[300px] flex flex-col overflow-hidden border-b border-t border-[#F0F0F0]">
     <div className="relative h-full  banner_bg p-10 md:p-16 overflow-hidden">
       <div className="flex whitespace-nowrap animate-marquee ">
         <div className="flex flex-row gap-10 md:gap-16 text-7xl md:text-8xl lg:text-9xl text-[#F0F0F0] font-bold uppercase">

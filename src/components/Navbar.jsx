@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { a } from 'framer-motion/client';
 import { Menu } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
+
 
 
 export default function Navbar() {
@@ -111,13 +111,13 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
       className="fixed top-0 left-0 bottom-0 right-0 z-50 h-[102lvh] flex items-center bg-blue-50 p-1 pt-5"
       ref={navRef}
     >
       <div className="h-full w-full flex flex-col">
         <div className="sm:hidden mt-2 h-10 w-full px-4 flex flex-row items-center justify-between">
-          <div>logo</div>
+        <Logo />
           <motion.div
             className="h-full w-fit flex flex-row items-center justify-center py-1 px-1 gap-3 rounded-full"
             initial={{ backgroundColor: 'transparent', opacity: 0.7 }}
@@ -159,13 +159,13 @@ export default function Navbar() {
           className=' h-full w-full flex flex-col gap-4 items-center justify-center text-black text-6xl font-semibold'>
           {links.map(({ id, label }) => (
 
-            <a 
-            key={id} 
-            onClick={(e) => {handleClick(e, id); setisMenuOpen(false)}}
-            data-link={id}
-            href={`#${id}`}
-            className={`${activeLink === id ? 'text-black' : 'text-gray-600 hover:text-white'
-                  }`}
+            <a
+              key={id}
+              onClick={(e) => { handleClick(e, id); setisMenuOpen(false) }}
+              data-link={id}
+              href={`#${id}`}
+              className={`${activeLink === id ? 'text-black' : 'text-gray-600 hover:text-white'
+                }`}
             >{label}</a>
           ))}
         </motion.div>
@@ -187,7 +187,7 @@ export default function Navbar() {
           opacity: 0,
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.4,
           ease: "easeInOut"
         }}
 
@@ -213,7 +213,7 @@ export default function Navbar() {
         </ul>
 
         <div className='sm:hidden mt-5 h-10 w-full px-4 flex flex-row items-center justify-between'>
-          <div>logo</div>
+          <Logo />
 
           <motion.div
             className={`h-full w-fit flex flex-row items-center justify-center py-1 px-1 gap-3 rounded-full`}
@@ -276,4 +276,13 @@ export default function Navbar() {
 
 
 
+}
+
+
+function Logo(){
+  return (
+    <div className='h-full w-fit'>
+      <img src="../../public/assets/images/Logo.png" className='h-[50px]' alt="" />
+    </div>
+  )
 }

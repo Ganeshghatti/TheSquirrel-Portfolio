@@ -73,10 +73,10 @@ function Expreance() {
         return (
           <div
             key={item.id}
-            className="  group md:hover:w-[40%]  transition-all duration-500 ease-in-out flex lg:flex-row md:flex-col flex-row items-center md:w-1/3  sm:w-[80%] w-[90%] bg-[var(--primary-color)] h-[270px] md:h-[400px] lg:h-[270px] px-10 py-8 gap-5"
+            className="  group md:hover:w-[40%]  transition-all duration-500 ease-in-out flex lg:flex-row md:flex-col flex-row items-center md:w-1/3  sm:w-[80%] w-[95%] bg-[var(--primary-color)] h-[270px] md:h-[400px] lg:h-[270px] px-10 py-8 gap-5"
           >
             <div className="flex flex-col ">
-              <span className="font-days text-7xl sm:text-8xl  mt-6 group-hover:mt-0 font-extrabold transition-all duration-500 ease-in-out group-hover:text-9xl">
+              <span className="font-days text-7xl sm:text-8xl  mt-6 group-hover:mt-0 font-extrabold transition-all duration-500 ease-in-out group-hover:text-8xl sm:group-hover:text-9xl">
                 {item.data}
               </span>
               <div className="h-[1px] mt-3 w-7 bg-white transition-all duration-500 ease-in-out group-hover:w-9"></div>
@@ -88,7 +88,7 @@ function Expreance() {
               <img
                 src={Nut}
                 alt=""
-                className="transition-all h-[100px] w-[100px] sm:min-h-[123px] sm:min-w-[123px] duration-500 ease-in-out group-hover:scale-125"
+                className="transition-all min-h-[90px] min-w-[70px] h-[100px] w-[100px] sm:min-h-[123px] sm:min-w-[123px] duration-500 ease-in-out group-hover:scale-125"
               />
             </div>
           </div>
@@ -137,7 +137,7 @@ const CardSlider = ({ cards }) => {
     if(isHovered) return;
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(timer);
   }, [cards.length]);
 
@@ -162,7 +162,7 @@ const CardSlider = ({ cards }) => {
       {cards.map((card, index) => (
         <motion.div
           key={index}
-          className="card absolute  left-1/2 right-1/2  w-[70%] h-fit lg:h-[530px] bg-white rounded-[50px] shadow-lg p-8 md:p-12 lg:p-16"
+          className="card absolute  left-1/2 right-1/2 w-[95%]  sm:w-[70%] h-fit lg:h-[530px] bg-white rounded-[50px] shadow-lg p-8 md:p-12 lg:p-16"
           variants={cardVariants}
           initial="hidden"
           animate={getCardStyle(index)}
@@ -213,7 +213,7 @@ const CardSlider = ({ cards }) => {
               </motion.div>
             </div>
 
-            <div className="flex flex-row justify-between items-center mt-4 lg:mt-auto">
+            <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row sm:justify-between sm:items-center mt-4 lg:mt-auto">
               <h6 className="text-2xl font-normal text-black capitalize ">
                 {card.productName}
               </h6>

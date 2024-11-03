@@ -190,12 +190,13 @@ const Card = ({ id, title, description, features, isOpen,
       key={id}
       className={`sticky cursor-pointer  transition-all duration-500 ease-in-out ${isOpen ? '' : 'top-0'}   h-fit  
        w-full  flex flex-col items-center justify-center border border-black`}
-       onClick={toggleDescription}
+       
     >
       <div className=" relative  border  bg-[var(--primary-color)] h-[245px] sm:h-[275px] lg:h-[345px] w-full py-8 px-8 sm:p-8 flex flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
+        onClick={toggleDescription}
       >
         <div className="flex flex-row items-center gap-3 sm:gap-10 ">
           <div className="relative flex items-center justify-center h-[80px] w-[80px] lg:h-[124px] lg:w-[124px]">
@@ -265,10 +266,11 @@ const Card = ({ id, title, description, features, isOpen,
             duration: 0.5,
             ease: "easeInOut"
           }}
+          
           className="w-full bg-teal-600 overflow-hidden"
         >
           <div className="flex flex-col my-10 items-center gap-14 justify-center px-8 sm:px-10 md:px-20 lg:px-52 h-fit">
-            <p className=" text-xl sm:text-3xl md:text-4xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione animi nobis sequi corrupti praesentium laudantium. Mollitia error molestias eos beatae dolore praesentium consequatur quo quidem, dignissimos, neque adipisci voluptate nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo mollitia ea obcaecati quia porro eius, animi minima aut, autem soluta eaque. Ad, cupiditate vero repudiandae corporis neque saepe adipisci atque.</p>
+            <p  onClick={toggleDescription} className=" text-xl sm:text-3xl md:text-4xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione animi nobis sequi corrupti praesentium laudantium. Mollitia error molestias eos beatae dolore praesentium consequatur quo quidem, dignissimos, neque adipisci voluptate nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo mollitia ea obcaecati quia porro eius, animi minima aut, autem soluta eaque. Ad, cupiditate vero repudiandae corporis neque saepe adipisci atque.</p>
             <Button />
           </div>
         </motion.div>
@@ -288,7 +290,7 @@ function Button() {
   return (
     <button
       onClick={handleClick}
-      className=" self-start text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
+      className=" z-20 self-start text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
     >
 
       <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />

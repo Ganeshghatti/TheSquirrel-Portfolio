@@ -36,7 +36,7 @@ const ImageGallery = () => {
 
 function Title() {
   return (
-    <div className=" flex  w-[90%] md:px-16">
+    <div className=" flex  w-[95%] ">
       <div className="flex  md:pr-32 flex-col text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black">
           <span>OUR</span>
           <span>CASES</span>

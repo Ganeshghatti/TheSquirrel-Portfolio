@@ -37,6 +37,13 @@
         transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
         will-change: transform, filter, rotateY, width;
     }
+    .items .item:active, .items .item:focus {
+        width: 30vw;
+        filter: inherit;
+        z-index: 100;
+        transform: translateZ(calc(var(--index) * 10));
+        margin: 0 .45vw;
+    }
 }
 .item::before, .item::after{
     content: '';
@@ -91,7 +98,7 @@
     transform: translateZ(calc(var(--index) * .6)) rotateY(-2deg);
 }
 .items .item:active, .items .item:focus {
-	width: 28vw;
+	width: 90vw;
 	filter: inherit;
 	z-index: 100;
 	transform: translateZ(calc(var(--index) * 10));
