@@ -112,7 +112,7 @@ export default function Navbar() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="fixed top-0 left-0 bottom-0 right-0 z-50 h-[102lvh] flex items-center bg-blue-50 p-1 pt-5"
+      className="fixed top-0 left-0 bottom-0 right-0 z-50 h-[102lvh] flex items-center bg-[var(--primary-color)] p-1 pt-3"
       ref={navRef}
     >
       <div className="h-full w-full flex flex-col">
@@ -164,7 +164,7 @@ export default function Navbar() {
               onClick={(e) => { handleClick(e, id); setisMenuOpen(false) }}
               data-link={id}
               href={`#${id}`}
-              className={`${activeLink === id ? 'text-black' : 'text-gray-600 hover:text-white'
+              className={`${activeLink === id ? 'text-white' : 'text-gray-900 hover:text-white'
                 }`}
             >{label}</a>
           ))}

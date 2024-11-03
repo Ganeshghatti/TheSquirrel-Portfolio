@@ -60,7 +60,7 @@ const Box = () => {
       
       <div className="w-full max-w-[700px] text-black">
         <div className="flex flex-col text-xl md:text-4xl font-light gap-4">
-          <div className="relative">
+          <div className="relative flex flex-col">
             <input
               className={`${inputBaseClasses} ${errors.name ? 'border-red-500' : ''} bg-transparent`}
               type="text"
@@ -78,7 +78,7 @@ const Box = () => {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative flex flex-col">
             <input
               className={`${inputBaseClasses} ${errors.email ? 'border-red-500' : ''} bg-transparent`}
               type="email"
@@ -100,7 +100,7 @@ const Box = () => {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative flex flex-col">
             <input
               className={`${inputBaseClasses} ${errors.contactNumber ? 'border-red-500' : ''} bg-transparent`}
               type="tel"
