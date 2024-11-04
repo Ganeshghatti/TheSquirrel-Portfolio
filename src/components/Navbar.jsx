@@ -282,7 +282,10 @@ export default function Navbar() {
 function Logo(){
   return (
     <div className='h-full w-fit'>
-      <img src="../../public/assets/images/Logo.png" className='h-[50px]' alt="" />
+      <img src="/assets/images/Logo.png" className='h-[50px]' alt="" />
     </div>
   )
 }
+
+// ../assets/Logo.png
+// ../../public/assets/images/Logo.png
