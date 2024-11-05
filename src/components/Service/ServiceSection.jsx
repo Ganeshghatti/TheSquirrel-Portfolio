@@ -192,7 +192,9 @@ const Card = ({ id, title, description, features, isOpen,
        w-full  flex flex-col items-center justify-center border border-black`}
        
     >
-      <div className=" relative  border  bg-[var(--primary-color)] h-[245px] sm:h-[275px] lg:h-[345px] w-full py-8 px-8 sm:p-8 flex flex-col items-center justify-center"
+      <motion.div
+      
+      className=" relative   transition-all duration-500 ease-in-out  bg-[var(--primary-color)] h-[240px] sm:h-[240px] lg:h-[240px] w-full py-8 px-8 sm:p-8 flex flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
@@ -253,7 +255,7 @@ const Card = ({ id, title, description, features, isOpen,
 
 
 
-      </div>
+      </motion.div>
       <AnimatePresence initial={false}>
         <motion.div
           key="content"

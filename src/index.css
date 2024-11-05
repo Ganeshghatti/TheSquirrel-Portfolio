@@ -11,12 +11,19 @@
   font-family: "Days One";
   src: url("./font/days-one/DaysOne-Regular.ttf");
 }
+
+@font-face {
+  font-family: "Sohne";
+  src: url("./font/Söhne-Font-Family-Collection/Test Söhne/TestSöhne-Buch.otf");
+}
 *{
   /* border: 1px solid yellow; */
 }
 @layer base {
   :root {
     font-family: "Darker Grotesque", sans-serif;
+
+    /* font-family: "Sohne", sans-serif; */
 
     color: rgba(255, 255, 255, 0.87);
 

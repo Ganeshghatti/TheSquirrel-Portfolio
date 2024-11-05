@@ -51,6 +51,7 @@ const Box = () => {
 
   return (
     <form 
+      id='form'
       className="flex flex-col gap-10 md:gap-14 bg-white rounded-[50px] p-8 md:p-12 lg:p-16 w-[95%] md:w-[95%]"
       onSubmit={handleSubmit(onSubmit)}
     >

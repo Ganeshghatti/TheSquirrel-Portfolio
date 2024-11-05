@@ -54,6 +54,16 @@ export default function Navbar() {
     e.preventDefault();
     // setActiveLink(linkId);
     // updateIndicatorPosition(linkId);
+
+    if(linkId === 'contact'){
+      console.log("contact click");
+      const element = document.getElementById("form");
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      return
+    }
     const element = document.getElementById(linkId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

@@ -31,7 +31,7 @@ function Title() {
 function Description() {
   return (
     <div className=" w-full max-w-[700px] text-black">
-      <p className="text-2xl md:text-3xl md:tracking-widest">{DISCRIPTION}</p>
+      <p className="text-2xl md:text-3xl font-thin md:tracking-widest">{DISCRIPTION}</p>
     </div>
   );
 }
