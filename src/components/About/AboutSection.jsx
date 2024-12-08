@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import Arrow from '../../assets/arrow.svg'
+import Arrow from "../../assets/arrow.svg";
 
 const DISCRIPTION =
-  "The Squirrel is a tech agency from India offering web, app development, and AI services. We create smart chatbots and digital solutions to boost efficiency and customer satisfaction. Stay ahead with our innovative, scalable technology. Contact us today!";
-
+  "Cohesive Visual - Intelligent Solutions - Swift Delivery \n\n We are a premier tech-agency based out of India specializing in solution that your business needs. We combine our knowledge of Aesthetics with Technology to Intelligently Present your Business via Websites/App/Designs.";
 export default function AboutSection() {
   return (
     <section
@@ -30,8 +29,10 @@ function Title() {
 
 function Description() {
   return (
-    <div className=" w-full max-w-[700px] text-black">
-      <p className="text-2xl md:text-3xl font-thin md:tracking-widest">{DISCRIPTION}</p>
+    <div className=" w-full max-w-[750px] text-black">
+      <p className="text-2xl md:text-3xl font-thin md:tracking-widest">
+        {DISCRIPTION}
+      </p>
     </div>
   );
 }
@@ -41,17 +42,21 @@ function Button() {
     e.preventDefault();
     const element = document.getElementById("contact");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
     <button
       onClick={handleClick}
-      className=" text-nowrap relative bg-[#E8E8E8] flex flex-row items-center text-black   w-fit md:w-full max-w-[700px]  border border-[#C8C8C8] rounded-full px-[50px]  md:px-[100px] py-0  gap-5 group "
+      className="text-nowrap relative bg-[#E8E8E8] flex flex-row items-center justify-center text-black w-fit md:w-full max-w-[550px] border border-[#C8C8C8] rounded-full px-[50px] md:px-[100px] py-0 gap-5 group"
     >
-
-      <img src={Arrow} className=' h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]' />
-      <span className="w-fit font-medium mb-2 text-4xl md:text-7xl">CONTACT US!</span>
+      <img
+        src={Arrow}
+        className="h-[30px] md:h-fit absolute left-3 sm:group-hover:left-[calc(100%-75px)] transition-all duration-1000 ease-in-out group-hover:rotate-[400deg]"
+      />
+      <span className="w-fit font-medium mb-2 lg:text-6xl md:text-7xl text-center">
+        CONTACT US!
+      </span>
     </button>
   );
 }

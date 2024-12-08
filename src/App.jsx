@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import { OrbitControls, SpotLight } from "@react-three/drei";
 import { Squirrel } from "./components/Squirrel";
 import React from "react";
+import Clients from "./components/Clients/Clients";
 
 function App() {
   return (
